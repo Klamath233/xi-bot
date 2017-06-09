@@ -14,7 +14,7 @@ async def exec_hotpoint(client, channel):
         traffic_model="best_guess", 
         departure_time=datetime.datetime.now())
 
-    duration = [0]['legs'][0]['duration_in_traffic']
+    duration = routes[0]['legs'][0]['duration_in_traffic']
 
     await client.send_message(channel, duration['text'])
 
