@@ -1,7 +1,7 @@
 import discord
 import json
 import asyncio
-from hotpoint.config import GOOGLE_API_KEY
+from .config import GOOGLE_API_KEY
 import googlemaps
 import datetime
 
