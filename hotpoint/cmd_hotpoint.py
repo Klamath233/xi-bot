@@ -25,7 +25,7 @@ async def exec_hotpoint(client, channel):
 
     time = datetime.datetime.now()
 
-    message = "Now: {}\n+30 min: {}\n+1 hour: {}\n+2 hours: {}".format(
+    message = "Now: {}\n+30 mins: {}\n+1 hour: {}\n+2 hours: {}".format(
         get_duration_to_hp(time)['text'],
         get_duration_to_hp(time + half_hour)['text'],
         get_duration_to_hp(time + an_hour)['text'],
