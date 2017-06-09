@@ -26,8 +26,8 @@ async def on_message(message):
         await client.send_message(message.channel, 'Hello, {}!'.format(message.author))
 
     if message.content.startswith('!hotpoint'):
-        await exec_set_alias(client, message.channel)
-        
+        await exec_hotpoint(client, message.channel)
+
     if message.content.startswith('!set_alias'):
         argv = message.content.split()
         if (len(argv) != 4):
