@@ -4,8 +4,6 @@ import asyncio
 
 with open('alias.json', 'r') as alias_file:
     alias_dict = json.load(alias_file, encoding='utf-8')
-    
-print(alias_dict)
 
 async def exec_set_alias(client, channel, name, discriminator, alias):
     key = name + '#' + discriminator
