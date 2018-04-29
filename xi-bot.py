@@ -1,12 +1,9 @@
 import discord
 import asyncio
-import people.shuji
-import people.xi
 
 from util.state_predicates import person_just_left
 from util.time import get_formatted_timestamp_in_LA as timestamp
 from alias.cmd_set_alias import exec_set_alias, get_alias
-from hotpoint.cmd_hotpoint import exec_hotpoint
 
 client = discord.Client()
 
