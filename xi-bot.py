@@ -43,20 +43,8 @@ async def on_member_join(member):
 
 @client.event
 async def on_voice_state_update(before, after):
+    pass
 
-    channel = [c for c in client.get_all_channels() if c.name == 'general'][0]
-
-    person_name = before.name
-    person_discriminator = before.discriminator
-
-    if not person_just_left(person_name, before, after):
-        if after.voice.voice_channel != before.voice.voice_channel:
-            await client.send_message(channel, '{} 欢迎`{}`加入频道`{}`!'.format(timestamp(), get_alias(person_name, person_discriminator), after.voice.voice_channel))
-    else:
-        await client.send_message(channel, '{} 恭送`{}`！'.format(timestamp(), get_alias(person_name, person_discriminator)))
-        
-    await people.xi.xi_greeting(client, before, after)
-    await people.xi.xi_goodbye(client, before, after)
 
 token = open('token', 'r')
 client.run(token.read())
