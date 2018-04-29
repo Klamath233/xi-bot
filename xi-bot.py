@@ -20,7 +20,7 @@ async def on_ready():
 async def on_message(message):
     
     if message.content.startswith('!hello'):
-        await client.send_message(message.channel, 'Hello, {}!'.format(get_alias(message.author)))
+        await client.send_message(message.channel, 'Hello, {}!'.format(get_alias(message.author.name, message.author.discriminator)))
 
     if message.content.startswith('!hotpoint'):
         await exec_hotpoint(client, message.channel)
