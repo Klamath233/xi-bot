@@ -20,7 +20,7 @@ async def on_ready():
 async def on_message(message):
     
     if message.content.startswith('!hello'):
-        await client.send_message(message.channel, 'Hello, {}!'.format(get_alias(message.author.name, message.author.discriminator)))
+        await message.channel.send('Hello, {}!'.format(get_alias(message.author.name, message.author.discriminator)))
 
     if message.content.startswith('!hotpoint'):
         await exec_hotpoint(client, message.channel)
@@ -28,9 +28,9 @@ async def on_message(message):
     if message.content.startswith('!set_alias'):
         argv = message.content.split()
         if (len(argv) != 4):
-            await client.send_message(message.channel, 'Insufficient number of arguments, 4 required.')
+            await message.channel.send('Insufficient number of arguments, 4 required.')
         elif not message.author.server_permissions.administrator:
-            await client.send_message(message.channel, 'Not enough privilege.')
+            await message.channel.send('Not enough privilege.')
         else:
             await exec_set_alias(client, message.channel, argv[1], argv[2], argv[3])
 
@@ -39,7 +39,7 @@ async def on_member_join(member):
     pass
 
 @client.event
-async def on_voice_state_update(before, after):
+async def on_voice_state_update(member, before, after):
     pass
 
 
