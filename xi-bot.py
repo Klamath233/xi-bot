@@ -50,6 +50,10 @@ async def on_message(message):
         if voice_client:
             await voice_client.disconnect()
             voice_client = None
+    
+    if 'xgnb' in message.content.lower():
+        if voice_client and not voice_client.is_playing():
+            voice_client.play(discord.FFmpegPCMAudio('assets/xgnb.mp3'))
 
 
 @client.event
